@@ -4,10 +4,8 @@ class User
   field :name
   field :email
 
-  has_many :transactions
-  has_many :payments
-  has_and_belongs_to_many :groups
+  has_many :members
 
   validates :name, presence: true
-  
+  validates :email, presence: true, uniqueness: {case_sensitive: false}
 end

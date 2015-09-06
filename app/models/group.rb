@@ -3,10 +3,10 @@ class Group
 
   field :name
 
-  has_many :transactions
-  has_many :payments
-  has_many :debts
-  has_and_belongs_to_many :users 
+  has_many :transactions, dependent: :destroy
+  has_many :debts, dependent: :destroy
+  has_many :members, dependent: :destroy
 
   validates :name, presence: true
+
 end
